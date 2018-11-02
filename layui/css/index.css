@@ -83,13 +83,14 @@ a.active{
 
 .list{
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     background-color: white;
     border-radius: 5px;
+    width: 98%;
 }
 .list-item{
-    width: 50%;
-    margin: 5px;
+    width: 48%;
 }
 
 
