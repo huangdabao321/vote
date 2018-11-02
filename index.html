@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vote</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="layui/css/index.css">
+</head>
+<body>
+<div class="layui-carousel" id="banner">
+    <div carousel-item>
+        <img src="./images/1.jpg" alt="" width="100%">
+        <img src="./images/2.jpg" alt="" width="100%">
+    </div>
+</div>
+<div class="time m-bottom">
+    <h2>倒计时：00:00:00</h2>
+</div>
+<section class="data-info m-bottom">
+<h3>参与总数：<span>124</span></h3>
+<h3>浏览总数：<span>124</span></h3>
+</section>
+<section class="search">
+    <div class="s">
+        <input type="text" placeholder="选手编号">
+        <span><i class="layui-icon" style="font-size: 27px;color: darkgray;">&#xe615;</i></span>
+    </div>
+    <div class="tab">
+        <div class="tab-card">
+            <a type="button" class="btn active">人气选手</a>
+            <a type="button" class="btn">最新参与</a>
+        </div>
+    </div>
+</section>
+<section class="list">
+    <div class="list-item">
+        
+        <img src="./images/1.jpg" alt="" width="90%;">
+    </div>
+    <div class="list-item">
+        <img src="./images/1.jpg" alt="" width="90%;">
+    </div>
+    <div class="list-item">
+        <img src="./images/1.jpg" alt="" width="90%;">
+    </div>
+</section>
+
+<script src="layui/layui.js"></script>
+<script>
+    layui.use(['jquery','layer','carousel','element'], function(){
+        var layer = layui.layer
+            ,carousel = layui.carousel
+            , element = layui.element;
+
+        carousel.render({
+            elem: '#banner'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'always' //始终显示箭头
+        });
+
+
+        //layer.msg('Hello World');
+    });
+
+</script>
+</body>
+</html>
