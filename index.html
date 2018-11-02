@@ -37,21 +37,49 @@
 </section>
 <section class="list">
     <div class="list-item">
-
-        <img src="./images/1.jpg" alt="" width="90%;">
+        <div class="list-item-i">
+            <img src="./images/1.jpg" alt="" width="100%;">
+            <h3>1号</h3>
+            <p>阿拉丁快速公交</p>
+            <a href="" type="button" class="layui-btn layui-btn-success layui-btn-xs">投票</a>
+        </div>
     </div>
     <div class="list-item">
-        <img src="./images/1.jpg" alt="" width="90%;">
+        <div class="list-item-i">
+            <img src="./images/1.jpg" alt="" width="100%;">
+            <h3>1号</h3>
+            <p>阿拉丁快速公交阿萨德刚阿斯蒂芬干大哥阿萨德刚阿萨德刚阿斯蒂</p>
+            <a href="" type="button" class="layui-btn layui-btn-success layui-btn-xs">投票</a>
+        </div>
     </div>
     <div class="list-item">
-        <img src="./images/1.jpg" alt="" width="90%;">
+        <div class="list-item-i">
+            <img src="./images/1.jpg" alt="" width="100%;">
+            <h3>1号</h3>
+            <p>阿拉丁快速公交</p>
+            <a href="" type="button" class="layui-btn layui-btn-success layui-btn-xs">投票</a>
+        </div>
     </div>
 </section>
 
+<section class="sign-in">
+    <span id="sign-in">
+        <i class="layui-icon layui-icon-add-circle" style="font-size: 30px; color: #1E9FFF;"></i>
+    </span>
+</section>
+
+<section class="footer">
+    <span><i class="layui-icon layui-icon-home" style="font-size: 25px; color: #1E9FFF;"></i>首页  </span>
+    <span><i class="layui-icon layui-icon-rmb" style="font-size: 25px; color: #1E9FFF;"></i> 奖品 </span>
+    <!--<span><i class="layui-icon layui-icon-edit" style="font-size: 25px; color: #1E9FFF;"></i>报名  </span>-->
+    <span><i class="layui-icon layui-icon-list" style="font-size: 25px; color: #1E9FFF;"></i> 排行 </span>
+</section>
+<script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.js"></script>
 <script src="layui/layui.js"></script>
 <script>
     layui.use(['jquery','layer','carousel','element'], function(){
-        var layer = layui.layer
+        var jquery = layer.jquery
+            ,layer = layui.layer
             ,carousel = layui.carousel
             , element = layui.element;
 
@@ -60,10 +88,12 @@
             ,width: '100%' //设置容器宽度
             ,arrow: 'always' //始终显示箭头
         });
-
-
         //layer.msg('Hello World');
     });
+
+    $("#sign-in").on('click',function(){
+        
+    })
 
 </script>
 </body>

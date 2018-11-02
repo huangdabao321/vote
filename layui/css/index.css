@@ -83,14 +83,45 @@ a.active{
 
 .list{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     flex-wrap: wrap;
     background-color: white;
     border-radius: 5px;
-    width: 98%;
+    margin-bottom: 70px;
 }
 .list-item{
-    width: 48%;
+    width: 50%;
 }
 
+.list-item-i{
+    padding: 5px;
+}
+
+.footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    background-color: rgb(247,246,251);
+    border-top: 1px solid #b2b2b2;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #1E9FFF;;
+}
+
+.sign-in{
+    position: fixed;
+    top: 50%;
+    right: 10px;
+}
 
