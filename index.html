@@ -16,70 +16,89 @@
         <img src="./images/2.jpg" alt="" width="100%">
     </div>
 </div>
-<div class="time m-bottom">
-    <h2>倒计时：00:00:00</h2>
+<div class="time">
+    <h2>距活动结束:</h2>
+    <span>
+        <span>10</span>天
+        <span>23</span>时
+        <span>26</span>分
+        <span>14</span>秒
+    </span>
 </div>
 <section class="data-info m-bottom">
-<h3>参与总数：<span>124</span></h3>
-<h3>浏览总数：<span>124</span></h3>
+<p><span>已报名</span><span>124</span></p>
+<p><span>投票人数</span><span>124</span></p>
+<p><span>访问量</span><span>124</span></p>
 </section>
 <section class="search">
     <div class="s">
-        <input type="text" placeholder="选手编号">
-        <span><i class="layui-icon" style="font-size: 27px;color: darkgray;">&#xe615;</i></span>
+        <input type="text" id="number" placeholder="请输入编号">
+        <span id="search"><i class="layui-icon" style="font-size: 18px;color: rgb(51,102,255);">&#xe615;</i></span>
     </div>
-    <div class="tab">
-        <div class="tab-card">
-            <a type="button" class="btn active">人气选手</a>
-            <a type="button" class="btn">最新参与</a>
-        </div>
+</section>
+<section class="tab">
+    <div class="tab-card">
+        <a type="button" class="btn active">人气选手</a>
+        <a type="button" class="btn">最新参与</a>
     </div>
 </section>
 <section class="list">
     <div class="list-item">
         <div class="list-item-i">
             <img src="./images/1.jpg" alt="" width="100%;">
-            <h3>1号</h3>
-            <p>阿拉丁快速公交</p>
-            <a href="" type="button" class="layui-btn layui-btn-success layui-btn-xs">投票</a>
+            <div class="v-user">
+                <h3>姓名行</h3>
+                <h3>编号:1325</h3>
+            </div>
+            <div class="v-div">
+                <span class="v-num">票数:2315</span>
+                <button type="button" class="vote">投票</button>
+            </div>
         </div>
     </div>
     <div class="list-item">
         <div class="list-item-i">
             <img src="./images/1.jpg" alt="" width="100%;">
-            <h3>1号</h3>
-            <p>阿拉丁快速公交阿萨德刚阿斯蒂芬干大哥阿萨德刚阿萨德刚阿斯蒂</p>
-            <a href="" type="button" class="layui-btn layui-btn-success layui-btn-xs">投票</a>
+            <div class="v-user">
+                <h3>姓名行</h3>
+                <h3>编号:1325</h3>
+            </div>
+            <div class="v-div">
+                <span class="v-num">票数:2315</span>
+                <button type="button" class="had-vote">已投</button>
+            </div>
         </div>
     </div>
     <div class="list-item">
         <div class="list-item-i">
             <img src="./images/1.jpg" alt="" width="100%;">
-            <h3>1号</h3>
-            <p>阿拉丁快速公交</p>
-            <a href="" type="button" class="layui-btn layui-btn-success layui-btn-xs">投票</a>
+            <div class="v-user">
+                <h3>姓名行</h3>
+                <h3>编号:1325</h3>
+            </div>
+            <div class="v-div">
+                <span class="v-num">票数:2315</span>
+                <button type="button" class="vote">投票</button>
+            </div>
         </div>
     </div>
+
 </section>
 
-<section class="sign-in">
-    <span id="sign-in">
-        <i class="layui-icon layui-icon-add-circle" style="font-size: 30px; color: #1E9FFF;"></i>
-    </span>
+<section id="sign-in">
+
 </section>
 
 <section class="footer">
-    <span><i class="layui-icon layui-icon-home" style="font-size: 25px; color: #1E9FFF;"></i>首页  </span>
-    <span><i class="layui-icon layui-icon-rmb" style="font-size: 25px; color: #1E9FFF;"></i> 奖品 </span>
-    <!--<span><i class="layui-icon layui-icon-edit" style="font-size: 25px; color: #1E9FFF;"></i>报名  </span>-->
-    <span><i class="layui-icon layui-icon-list" style="font-size: 25px; color: #1E9FFF;"></i> 排行 </span>
+    <a href="index.html" class="active"><span><i class="iconfont icon-shouye btn-active" style="font-size: 25px; "></i>首页</span></a>
+    <a href="rank.html"><span><i class="iconfont icon-paixing" style="font-size: 25px; color: rgb(158,158,158);"></i> 排行</span></a>
+    <a href=""><span><i class="iconfont icon-renyuanbaoming" style="font-size: 25px; color: rgb(158,158,158);"></i>报名</span></a>
 </section>
 <script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.js"></script>
 <script src="layui/layui.js"></script>
 <script>
-    layui.use(['jquery','layer','carousel','element'], function(){
-        var jquery = layer.jquery
-            ,layer = layui.layer
+    layui.use(['layer','carousel','element'], function(){
+        var layer = layui.layer
             ,carousel = layui.carousel
             , element = layui.element;
 
@@ -92,8 +111,32 @@
     });
 
     $("#sign-in").on('click',function(){
-        
+        layer.open({
+            type: 2,
+            title: false,
+            shade: 0.5,
+            shadeClose:true,
+            closeBtn:0,
+            area: ['90%', '80%'],
+            content: 'introduce.html'
+        });
     })
+
+    $("#search").on('click',function(){
+        var number =  parseInt( $("#number").val().trim() );
+        console.log(number,typeof number)
+        if(isNaN(number)){
+            layer.msg('请输入正确编号')
+        }
+    })
+
+    $(".vote").on('click',function () {
+        layer.msg('投票啦')
+    })
+    $(".had-vote").on('click',function () {
+        layer.msg('投过啦')
+    })
+
 
 </script>
 </body>
